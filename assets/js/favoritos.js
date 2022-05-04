@@ -1,6 +1,6 @@
 const favoritosPadre = document.getElementById("favoritos")
 
-if(JSON.parse(localStorage.getItem("favoritos")).length != 0){
+if(localStorage.getItem("favoritos")){
     let datosGuardados = JSON.parse(localStorage.getItem("favoritos"))
 
     datosGuardados.forEach((fav) => {
@@ -25,7 +25,13 @@ if(JSON.parse(localStorage.getItem("favoritos")).length != 0){
             el.addEventListener("click",(e)=>{
                 let datosGuardados = JSON.parse(localStorage.getItem("favoritos"))
                 const eliminado = datosGuardados.filter((fav) => fav.id != e.target.id)
-                localStorage.setItem("favoritos",JSON.stringify(eliminado))
+                if(eliminado.length != 0){
+                    localStorage.setItem("favoritos",JSON.stringify(eliminado))
+                }
+                else{
+                    localStorage.removeItem('favoritos');
+                }
+               
                 location.reload();
             })
         })
