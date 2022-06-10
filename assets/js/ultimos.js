@@ -1,10 +1,14 @@
 const urlUltimos = "https://api.jikan.moe/v4/seasons/now"
 const ultimos = document.getElementById("ultimosAnimes")
 
+ultimosAnimes(urlUltimos, ultimos);
 
-fetch(urlUltimos).then(resp => resp.json()).then(datos => {
-   /*  console.log(datos.data[0]); */
-    const ultimosA = datos.data
+async function ultimosAnimes(url, ultimos){
+
+    const respuesta = await fetch(url);
+    const datos = await respuesta.json();
+
+    const ultimosA = datos.data;
 
     ultimosA.forEach((anime,index) =>{
         if(index < 20){
@@ -13,7 +17,7 @@ fetch(urlUltimos).then(resp => resp.json()).then(datos => {
                 imagen: anime.images.jpg.image_url,
                 titulo: anime.title,
                 id: anime.mal_id
-            }
+            };
     
             const template = `
                                 <div class="col mb-4">
@@ -26,9 +30,10 @@ fetch(urlUltimos).then(resp => resp.json()).then(datos => {
                                         </div>
                                     </a>
                                 </div>
-                            `
+                            `;
             
-            ultimos.innerHTML += template
+            ultimos.innerHTML += template;
+
         }
     })
-})
+}

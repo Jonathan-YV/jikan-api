@@ -1,19 +1,25 @@
-let urlA = window.location.href
-let idA = urlA.split("=")[1]
-const busqueda = document.getElementById("busqueda")
+let urlA = window.location.href;
+let idA = urlA.split("=")[1];
+const cuadricula = document.getElementById("busqueda");
 
-const urlBusqueda = `https://api.jikan.moe/v4/anime?q=${idA}&order_by=popularity`
+const urlBusqueda = `https://api.jikan.moe/v4/anime?q=${idA}&order_by=popularity`;
 
-fetch(urlBusqueda).then(resp => resp.json()).then(datos => {
-   /*  console.log(datos.data[0].images); */
-    const resultados = datos.data
+busqueda(urlBusqueda, cuadricula);
+
+async function busqueda(url, busqueda){
+
+    const respuesta = await fetch(url);
+    const datos = await respuesta.json();
+
+    const resultados = datos.data;
 
     resultados.forEach((resultado) => {
+
         const info = {
             imagen: resultado.images.jpg.image_url,
             titulo: resultado.title,
             id: resultado.mal_id
-        }
+        };
     
         const template = `
                             <div class="col mb-4">
@@ -26,10 +32,9 @@ fetch(urlBusqueda).then(resp => resp.json()).then(datos => {
                                     </div>
                                 </a>
                             </div>
-                        `
+                        `;
         
-        busqueda.innerHTML += template
-    })
+        busqueda.innerHTML += template;
 
-    
-})
+    })
+}
