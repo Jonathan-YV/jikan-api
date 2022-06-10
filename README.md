@@ -13,6 +13,12 @@ Página web utilizando HTML, CSS y JavaScript, consumiendo los datos de la Jikan
 * https://jonathan-yv.github.io/jikan-api/
 
 
+## Características
+* Buscador
+* Favoritos
+* Página de inicio
+* Página de información unica
+
 
 ## Autor ✒️
 
