@@ -4,7 +4,7 @@ Página web utilizando HTML, CSS y JavaScript, consumiendo los datos de la Jikan
 
 <div>
     <p style = 'text-align:center;'>
-        <img src="assets/img/Inicio.PNG" alt="inicio" width="600px">
+        <img src="assets/img/inicio.PNG" alt="inicio" width="600px">
     </p>
 </div>
 
