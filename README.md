@@ -15,7 +15,7 @@ Página web utilizando HTML, CSS y JavaScript, consumiendo los datos de la Jikan
 
 ## Características
 * Buscador
-* Favoritos
+* Favoritos en localStorage
 * Página de inicio
 * Página de información unica
 
