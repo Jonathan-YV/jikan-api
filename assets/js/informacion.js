@@ -2,6 +2,7 @@ const imagen = document.getElementById("imagenGrande");
 const informacionAnime = document.getElementById("informacionAnime");
 
 let urlA = window.location.href;
+console.log(urlA);
 let idA = urlA.split("=")[1];
 
 urlID = `https://api.jikan.moe/v4/anime/${idA}`;
