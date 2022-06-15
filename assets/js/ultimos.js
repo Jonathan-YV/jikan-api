@@ -21,7 +21,7 @@ async function ultimosAnimes(url, ultimos){
     
             const template = `
                                 <div class="col mb-4">
-                                    <a href="/templates/infoanime.html?id=${info.id}">
+                                    <a href="templates/infoanime.html?id=${info.id}">
                                         <div class="card card-animation">
                                         <img src="${info.imagen}" class="card-img-top" alt="${info.titulo}">
                                         <div class="card-body">
